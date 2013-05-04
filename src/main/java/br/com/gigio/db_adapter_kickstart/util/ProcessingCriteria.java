@@ -9,7 +9,7 @@ import br.com.gigio.db_adapter_kickstart.service.QueryExecutorScheduled;
 
 public class ProcessingCriteria {
 	
-	public boolean isScheduledGenerated(Message<?> message){
+	private boolean isScheduledGenerated(Message<?> message){
 		return message.getHeaders().containsKey(ProcessingTypeEnum.SCHEDULED.value()) ? true : false;
 	}
 

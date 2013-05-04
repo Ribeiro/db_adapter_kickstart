@@ -16,10 +16,12 @@ public class DBAdapterServiceImpl implements DBAdapterService{
 		QueryExecutor queryExecutor = processingCriteria.getQueryExecutorInstance(message);
 		
 		if (queryExecutor instanceof QueryExecutorScheduled) {
+			//Processamento de mensagem montada com base no quartz scheduler
 			//recupera o QuerySet do BD usando o Id ou Nome que consta no Payload e depois
 			return queryExecutor.execute(new QuerySet());
 			
 		} else {
+			//Processamento de mensagem recebida do queue do Router
 			List<QuerySet> acceptedQuerySetsList = new ArrayList<QuerySet>();
 			List<QuerySet> allQuerySets = retrieveAll();
 			
