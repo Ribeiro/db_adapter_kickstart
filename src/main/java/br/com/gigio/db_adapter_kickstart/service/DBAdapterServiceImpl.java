@@ -47,7 +47,7 @@ public class DBAdapterServiceImpl implements DBAdapterService {
 
 			} else if(acceptedQuerySetsList.size() == 1){
 				
-				//Execute from Query order 2 and so on associated to QuerySet in atomic way
+				//Execute from Query order 1 and so on associated to QuerySet in atomic way
 				return queryExecutor.execute(acceptedQuerySetsList.get(0));
 
 			}else {
