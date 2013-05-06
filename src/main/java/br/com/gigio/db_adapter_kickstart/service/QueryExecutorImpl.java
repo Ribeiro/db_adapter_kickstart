@@ -14,6 +14,7 @@ public class QueryExecutorImpl implements QueryExecutor{
 	private static final int MAX_NUMBER_OF_TRIES = 3;
     
     public List<Map<String, Object>> execute(Query query){
+    	//Execute query using DAO Layer
     	return new ArrayList<Map<String, Object>>();
     }
 
