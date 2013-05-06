@@ -67,7 +67,7 @@ public class DBAdapterServiceImpl implements DBAdapterService {
 
 	public static void main(String[] args) {
 		DBAdapterService das = new DBAdapterServiceImpl();
-		das.process(MessageBuilder.withPayload("querySet")
+		das.process(MessageBuilder.withPayload("")
 								  .setHeader("SCHEDULED", "SCHEDULE")
 								  .setHeader("querySetId", "1").build());
 
