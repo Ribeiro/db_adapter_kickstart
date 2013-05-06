@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.integration.Message;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.com.gigio.db_adapter_kickstart.domain.Query;
 import br.com.gigio.db_adapter_kickstart.domain.QuerySet;
@@ -18,6 +19,8 @@ public class QueryExecutorImpl implements QueryExecutor{
     	return new ArrayList<Map<String, Object>>();
     }
 
+    @SuppressWarnings("unchecked")
+	@Transactional
 	public Message<?> atomicProcessing(Message<?> incomingMessage, List<QuerySet> acceptedQuerySetsList, DBAMessageBuilder dbaMessageBuilder) throws QueryExecutorException {
 		List<Map<String,Object>> payloadCopy = (List<Map<String, Object>>) incomingMessage.getPayload();
 		List<Map<String,Object>> queryResult = null;
