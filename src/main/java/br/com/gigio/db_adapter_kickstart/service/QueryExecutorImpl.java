@@ -4,7 +4,7 @@ import org.springframework.integration.Message;
 
 import br.com.gigio.db_adapter_kickstart.domain.QuerySet;
 
-public class QueryExecutorScheduled implements QueryExecutor{
+public class QueryExecutorImpl implements QueryExecutor{
 
 	public Message<?> execute(QuerySet querySet) {
 		// TODO Auto-generated method stub
