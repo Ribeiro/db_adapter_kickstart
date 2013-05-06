@@ -5,12 +5,14 @@ public class Query {
 	private String name;
 	private String type;
 	private String sql;
+	private Character multiRowResult;
 	
-	public Query(Integer id, String name, String type, String sql){
+	public Query(Integer id, String name, String type, String sql, Character multiRowResult){
 		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.sql = sql;
+		this.multiRowResult = multiRowResult;
 	}
 	
 	public Integer getId() {
@@ -27,6 +29,10 @@ public class Query {
 	
 	public String getSql() {
 		return sql;
+	}
+	
+	public Character getMultiRowResult() {
+		return multiRowResult;
 	}
 
 }
