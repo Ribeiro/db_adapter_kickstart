@@ -19,26 +19,28 @@ public class QuerySet {
 	private Date timeStamp;
 	private List<Query> queries;
 
-	public QuerySet(){
+	public QuerySet() {
 		this.queries = new ArrayList<Query>();
 	}
-	
-	public QuerySet(Integer id, String name, Character enabled, DataSourceMetaData dataSourceMetaData, String cron, Character splitResults, String groupingHeaders, String event, String product, String codUser, Date timeStamp){
-		this.id = id; //NOT NULL
-		this.name = name; //NOT NULL
-		this.dataSourceMetaData = dataSourceMetaData; //NOT NULL
-		this.cron = cron; //NULLABLE
-		this.splitResults = splitResults; //NOT NULL
-		this.groupingHeaders = groupingHeaders; //NULLABLE
-		this.event = event; //NOT NULL
-		this.product = product; //NOT NULL
-		this.codUser = codUser; //NOT NULL
-		this.timeStamp = timeStamp; //NOT NULL
+
+	public QuerySet(Integer id, String name, Character enabled,
+			DataSourceMetaData dataSourceMetaData, String cron,
+			Character splitResults, String groupingHeaders, String event,
+			String product, String codUser, Date timeStamp) {
+		this.id = id; // NOT NULL
+		this.name = name; // NOT NULL
+		this.dataSourceMetaData = dataSourceMetaData; // NOT NULL
+		this.cron = cron; // NULLABLE
+		this.splitResults = splitResults; // NOT NULL
+		this.groupingHeaders = groupingHeaders; // NULLABLE
+		this.event = event; // NOT NULL
+		this.product = product; // NOT NULL
+		this.codUser = codUser; // NOT NULL
+		this.timeStamp = timeStamp; // NOT NULL
 		this.queries = queries != null ? queries : new ArrayList<Query>();
 	}
 
-	
-	public boolean accept(Message<?> message){
+	public boolean accept(Message<?> message) {
 		return true;
 	}
 
