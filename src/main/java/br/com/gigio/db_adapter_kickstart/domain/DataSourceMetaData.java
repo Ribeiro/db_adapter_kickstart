@@ -1,30 +1,28 @@
 package br.com.gigio.db_adapter_kickstart.domain;
 
-import java.util.Date;
-
 public class DataSourceMetaData {
 	private Integer id;
-	private Integer name;
+	private String name;
 	private String jdbcDriver;
-	private String url;
+	private String jdbcUrl;
 	private String username;
 	private String password;
 	private String validationQuery;
 	private String codUser;
-	private Date timeStamp;
+	private String timeStamp;
 
 	public DataSourceMetaData() {
 
 	}
 
 	// All attributes are NOT NULL on DataBase
-	public DataSourceMetaData(Integer id, Integer name, String jdbcDriver,
-			String url, String username, String password,
-			String validationQuery, String codUser, Date timeStamp) {
+	public DataSourceMetaData(Integer id, String name, String jdbcDriver,
+			String jdbcUrl, String username, String password,
+			String validationQuery, String codUser, String timeStamp) {
 		this.id = id;
 		this.name = name;
 		this.jdbcDriver = jdbcDriver;
-		this.url = url;
+		this.jdbcUrl = jdbcUrl;
 		this.username = username;
 		this.password = password;
 		this.validationQuery = validationQuery;
@@ -41,28 +39,12 @@ public class DataSourceMetaData {
 		this.id = id;
 	}
 
-	public Integer getName() {
-		return name;
-	}
-
-	public void setName(Integer name) {
-		this.name = name;
-	}
-
 	public String getJdbcDriver() {
 		return jdbcDriver;
 	}
 
 	public void setJdbcDriver(String jdbcDriver) {
 		this.jdbcDriver = jdbcDriver;
-	}
-
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
 	}
 
 	public String getUsername() {
@@ -97,12 +79,28 @@ public class DataSourceMetaData {
 		this.codUser = codUser;
 	}
 
-	public Date getTimeStamp() {
+	public String getTimeStamp() {
 		return timeStamp;
 	}
 
-	public void setTimeStamp(Date timeStamp) {
+	public void setTimeStamp(String timeStamp) {
 		this.timeStamp = timeStamp;
+	}
+
+	public String getJdbcUrl() {
+		return jdbcUrl;
+	}
+
+	public void setJdbcUrl(String jdbcUrl) {
+		this.jdbcUrl = jdbcUrl;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

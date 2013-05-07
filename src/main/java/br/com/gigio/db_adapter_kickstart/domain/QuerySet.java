@@ -1,7 +1,6 @@
 package br.com.gigio.db_adapter_kickstart.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import org.springframework.integration.Message;
 
@@ -16,7 +15,7 @@ public class QuerySet {
 	private String event;
 	private String product;
 	private String codUser;
-	private Date timeStamp;
+	private String timeStamp;
 	private List<Query> queries;
 
 	public QuerySet() {
@@ -26,7 +25,7 @@ public class QuerySet {
 	public QuerySet(Integer id, String name, Character enabled,
 			DataSourceMetaData dataSourceMetaData, String cron,
 			Character splitResults, String groupingHeaders, String event,
-			String product, String codUser, Date timeStamp) {
+			String product, String codUser, String timeStamp) {
 		this.id = id; // NOT NULL
 		this.name = name; // NOT NULL
 		this.dataSourceMetaData = dataSourceMetaData; // NOT NULL
@@ -124,11 +123,11 @@ public class QuerySet {
 		this.codUser = codUser;
 	}
 
-	public Date getTimeStamp() {
+	public String getTimeStamp() {
 		return timeStamp;
 	}
 
-	public void setTimeStamp(Date timeStamp) {
+	public void setTimeStamp(String timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 

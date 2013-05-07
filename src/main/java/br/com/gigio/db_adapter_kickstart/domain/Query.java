@@ -1,7 +1,5 @@
 package br.com.gigio.db_adapter_kickstart.domain;
 
-import java.util.Date;
-
 public class Query {
 	private Integer id;
 	private Integer queryOrder;
@@ -11,7 +9,7 @@ public class Query {
 	private Character multiRowResult;
 	private String querysetName;
 	private String codUser;
-	private Date timeStamp;
+	private String timeStamp;
 
 	public Query() {
 
@@ -20,7 +18,7 @@ public class Query {
 	//All attributes are NOT NULL on DataBase
 	public Query(Integer id, Integer queryOrder, String description,
 			String type, String sqlQuery, Character multiRowResult,
-			String querysetName, String codUser, Date timeStamp) {
+			String querysetName, String codUser, String timeStamp) {
 		this.id = id;
 		this.queryOrder = queryOrder;
 		this.description = description;
@@ -96,11 +94,11 @@ public class Query {
 		this.codUser = codUser;
 	}
 
-	public Date getTimeStamp() {
+	public String getTimeStamp() {
 		return timeStamp;
 	}
 
-	public void setTimeStamp(Date timeStamp) {
+	public void setTimeStamp(String timeStamp) {
 		this.timeStamp = timeStamp;
 	}
 
