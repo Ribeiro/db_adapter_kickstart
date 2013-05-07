@@ -17,7 +17,7 @@ public class Query {
 
 	}
 
-	// All attributes are NOT NULL on DataBase
+	//All attributes are NOT NULL on DataBase
 	public Query(Integer id, Integer queryOrder, String description,
 			String type, String sqlQuery, Character multiRowResult,
 			String querysetName, String codUser, Date timeStamp) {
