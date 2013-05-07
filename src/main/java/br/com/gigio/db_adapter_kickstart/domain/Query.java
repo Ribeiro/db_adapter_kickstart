@@ -1,12 +1,22 @@
 package br.com.gigio.db_adapter_kickstart.domain;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Query {
 	private Integer id;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private Integer queryOrder;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String description;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String type;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String sqlQuery;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private Character multiRowResult;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String querysetName;
 	private String codUser;
 	private String timeStamp;

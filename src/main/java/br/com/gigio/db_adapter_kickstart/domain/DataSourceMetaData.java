@@ -1,12 +1,23 @@
 package br.com.gigio.db_adapter_kickstart.domain;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class DataSourceMetaData {
+	
 	private Integer id;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String name;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String jdbcDriver;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String jdbcUrl;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String username;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String password;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String validationQuery;
 	private String codUser;
 	private String timeStamp;

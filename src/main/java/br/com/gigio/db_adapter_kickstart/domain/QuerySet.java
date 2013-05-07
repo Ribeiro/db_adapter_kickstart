@@ -2,17 +2,27 @@ package br.com.gigio.db_adapter_kickstart.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.integration.Message;
 
 public class QuerySet {
 	private Integer id;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String name;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private Character enabled;
-	private DataSourceMetaData dataSourceMetaData;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
+	private String dataSourceMetaDataName;
 	private String cron;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private Character splitResults;
 	private String groupingHeaders;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String event;
+	@NotNull(message="may not be null") @NotEmpty(message="may not be empty")
 	private String product;
 	private String codUser;
 	private String timeStamp;
@@ -23,12 +33,13 @@ public class QuerySet {
 	}
 
 	public QuerySet(Integer id, String name, Character enabled,
-			DataSourceMetaData dataSourceMetaData, String cron,
+			String dataSourceMetaDataName, String cron,
 			Character splitResults, String groupingHeaders, String event,
 			String product, String codUser, String timeStamp) {
 		this.id = id; // NOT NULL
 		this.name = name; // NOT NULL
-		this.dataSourceMetaData = dataSourceMetaData; // NOT NULL
+		this.enabled = enabled;
+		this.dataSourceMetaDataName = dataSourceMetaDataName; // NOT NULL
 		this.cron = cron; // NULLABLE
 		this.splitResults = splitResults; // NOT NULL
 		this.groupingHeaders = groupingHeaders; // NULLABLE
@@ -65,14 +76,6 @@ public class QuerySet {
 
 	public void setEnabled(Character enabled) {
 		this.enabled = enabled;
-	}
-
-	public DataSourceMetaData getDataSourceMetaData() {
-		return dataSourceMetaData;
-	}
-
-	public void setDataSourceMetaData(DataSourceMetaData dataSourceMetaData) {
-		this.dataSourceMetaData = dataSourceMetaData;
 	}
 
 	public String getCron() {
@@ -137,6 +140,14 @@ public class QuerySet {
 
 	public void setQueries(List<Query> queries) {
 		this.queries = queries;
+	}
+
+	public String getDataSourceMetaDataName() {
+		return dataSourceMetaDataName;
+	}
+
+	public void setDataSourceMetaDataName(String dataSourceMetaDataName) {
+		this.dataSourceMetaDataName = dataSourceMetaDataName;
 	}
 
 }
